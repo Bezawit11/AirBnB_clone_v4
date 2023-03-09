@@ -1,5 +1,6 @@
 window.addEventListener('load', function () {
   const amenityIds = {};
+  $("button").click(function(){
     $.post('/submitJSONData',  
        {},
        function(data, status, xhr) {   // success callback function
@@ -8,7 +9,8 @@ window.addEventListener('load', function () {
                 }
             },
        'application/json',
-       ) ;
+       );
+  });
   $('input[type=checkbox]').change(function () {
     if ($(this).prop('checked')) {
       amenityIds[$(this).attr('data-id')] = $(this).attr('data-name');
